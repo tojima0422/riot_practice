@@ -51,7 +51,9 @@
   });
   // route2
   route('/practice_b', function() {
-    riot.mount('contents','riot-practice-b')
+    riot.mount('contents','riot-practice-b', {
+      price: 100
+    })
   });
   // route3
   route('/practice_c', function() {
