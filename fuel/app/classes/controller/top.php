@@ -3,21 +3,20 @@
 class Controller_Top extends Controller
 {
 
-	public function action_index()
-	{
-		$title = 'Riot Practice';
-		$routes = [
-			'Home',
-			'PracticeA',
-			'PracticeB',
-			'PracticeC',
-		];
-		$routes = json_encode($routes);
-		$view  = View::forge('top/index', array(
-			'title'  => $title,
-			'routes' => $routes,
-		));
-		return $view;
-	}
+  public function action_index()
+  {
+    $title = 'Riot Practice';
+    $routes = array(
+      '#' => 'Home', 
+      '#practice_a' => 'PracticeA', 
+      '#practice_b' => 'PracticeB',
+      '#practice_c' => 'PracticeC',
+    );
+    $view  = View::forge('top/index', array(
+      'title'  => $title,
+      'routes' => $routes,
+    ));
+    return $view;
+  }
 
 }
