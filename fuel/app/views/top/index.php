@@ -27,8 +27,10 @@
 
 <!-- マウント -->
 <script>
+  var anc = location.hash
   riot.mount('riot-header', {
-    routes: <?php echo json_encode($routes, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>
+    routes: <?php echo json_encode($routes, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>,
+    anc: anc
   })
 
   // home

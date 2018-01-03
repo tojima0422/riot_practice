@@ -6,7 +6,7 @@
     <a each="{val, index in links}" 
        href="{index}"
        class="item {active: checkActive(index)} "
-       onclick="{updateActiveNum.bind(this, index)}" 
+       onclick="{updateActive.bind(this, index)}" 
     >
       { val }
     </a>
@@ -20,19 +20,19 @@
 
 <!-- script部分 -->
 <script>
-  this.links = opts.routes
-  this.activeNum = 0
+  this.active = opts.anc ? opts.anc : '#'
+  this.links  = opts.routes
   // 関数の定義
   checkActive(index) {
-    if(this.activeNum == index) {
+    if(this.active == index) {
       return true
     }
     else {
       return false
     }
   }
-  updateActiveNum(index, e) {
-    this.activeNum = index
+  updateActive(index, e) {
+    this.active = index
   }
 
 </script>
