@@ -39,7 +39,15 @@
   });
   // route1
   route('/practice_a', function() {
-    riot.mount('contents','riot-practice-a')
+    riot.mount('contents','riot-practice-a', {
+      title: 'Todo App',
+      items: [
+        {id: 1, title: 'Todo1', done: true},
+        {id: 2, title: 'Todo2', hidden: true},
+        {id: 3, title: 'Todo3'},
+        {id: 4, title: 'Todo4'},
+      ]
+    })
   });
   // route2
   route('/practice_b', function() {
