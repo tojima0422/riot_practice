@@ -6,7 +6,7 @@
         <div each={items.filter(whatShow)}
              class="item">
           <div class="content">
-            <div class="ui toggle checkbox">
+            <div class="ui checkbox">
               <input type="checkbox" id={id} checked={ done } onclick={ parent.toggle }>
               <label class={ completed: done } for={id}>
                 { title }

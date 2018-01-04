@@ -5,13 +5,13 @@
     <!-- eachでループさせることができる -->
     <a each="{val, index in links}" 
        href="{index}"
-       class="item {active: checkActive(index)} "
+       class="item {active: this.active == index}"
        onclick="{updateActive.bind(this, index)}" 
     >
       { val }
     </a>
     <div class="right menu">
-      <a href="#">
+      <a href="#" onclick="{ updateActive.bind(this, '#') }">
         <img src="/assets/img/riot60x.png" alt="riot">
       </a>
     </div>
@@ -23,14 +23,6 @@
   this.active = opts.anc ? opts.anc : '#'
   this.links  = opts.routes
   // 関数の定義
-  checkActive(index) {
-    if(this.active == index) {
-      return true
-    }
-    else {
-      return false
-    }
-  }
   updateActive(index, e) {
     this.active = index
   }
