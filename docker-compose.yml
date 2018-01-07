@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+    app:
+        # depends_onで依存関係を示す.mysqlを使いたいのでdbコンテナを指定.
+        depends_on:
+            - db
+        # build はDockerfileからビルドすることを示す.
+        # pathは相対パスになるので、同じ階層のfront内にあるDockerfileが読まれる
+        build: "./docker-app"
+        # ports でポートフォワーディングを指定.
+        ports:
+            - "80:80"
+        # volumes でマウントの指定.こちらも相対パス.(マウント元:マウント先)
+        volumes:
+            - "./:/var/www/html"
+            - "./docker-app/virtualhost.conf:/etc/httpd/conf.d/virtualhost.conf" ## ApacheのVirtualhost用の設定ファイルをマウント
+        # links で連携させるコンテナを示す.
+        # depends_onはビルド時に依存関係を考慮してビルドさせるために指定.
+        # links は appコンテナの/etc/hostsにdbのipを記述してくれる.
+        links:
+            - db
+        # これを指定しないと起動したコンテナがすぐに落ちる
+        tty: true
+    db:
+        # image はbuildをせず既存イメージを用いる場合に使う.
+        image: mysql
+        # environment は環境変数などのexportをしてくれる.
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: local
+        ports:
+            - "3316:3306"
+        hostname: db
