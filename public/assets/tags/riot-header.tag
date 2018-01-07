@@ -30,7 +30,6 @@
 </script>
 
 <style scoped>
-  :scope
   div {
     border-radius: 0 !important;
   }

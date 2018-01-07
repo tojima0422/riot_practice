@@ -49,7 +49,6 @@
 </script>
 
 <style scoped>
-  :scope
   .margin {
     margin-top: 20px;
     margin-bottom: 20px;

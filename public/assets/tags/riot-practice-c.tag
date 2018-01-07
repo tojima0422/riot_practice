@@ -103,7 +103,6 @@
     }
   </script>
   <style scoped>
-    :scope
     .header {
       margin-bottom: 30px;
     }

@@ -63,7 +63,6 @@
 </script>
 
 <style scoped>
-  :scope
   .completed {
     text-decoration: line-through;
     color: #ccc;
