@@ -62,7 +62,7 @@
   }
 </script>
 
-<style scoped>
+<style>
   .completed {
     text-decoration: line-through;
     color: #ccc;

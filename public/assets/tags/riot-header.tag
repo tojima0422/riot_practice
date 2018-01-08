@@ -29,7 +29,7 @@
 
 </script>
 
-<style scoped>
+<style>
   div {
     border-radius: 0 !important;
   }

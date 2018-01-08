@@ -48,7 +48,7 @@
   }
 </script>
 
-<style scoped>
+<style>
   .margin {
     margin-top: 20px;
     margin-bottom: 20px;

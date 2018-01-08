@@ -102,7 +102,7 @@
       return Math.floor( Math.random() * array.length )
     }
   </script>
-  <style scoped>
+  <style>
     .header {
       margin-bottom: 30px;
     }
