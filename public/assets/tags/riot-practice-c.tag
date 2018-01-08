@@ -11,7 +11,7 @@
         <button class="ui green basic button" onclick={ remove }>Remove Person</button>
       </div>
 
-      <div class="ui link cards" id="hoge">
+      <div class="ui link cards">
         <div each={list, index in lists } class="card">
           <div class="image">
             <img if={ list.gender == 'male' }   src="assets/img/male.png">
@@ -105,9 +105,6 @@
   <style scoped>
     .header {
       margin-bottom: 30px;
-    }
-    .hoge {
-      margin: 0 100px;
     }
   </style>
 </riot-practice-c>
